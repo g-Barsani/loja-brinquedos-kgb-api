@@ -76,13 +76,20 @@ public class ToyController {
     @PostMapping("/insert")
     public ResponseEntity<String> createToy(@RequestBody Toy toy) {
         // Verificar se o Toy existe
-        Optional<Toy> toyOpt = toyRepository.findById(toy.getId());
-        if (toyOpt.isPresent()) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("BRINQUEDO JÁ CADASTRADO!");
-        }
-        toyRepository.save(toy);
+//        Optional<Toy> toyOpt = toyRepository.findById(toy.getId());
+//        if (toyOpt.isPresent()) {
+//            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("BRINQUEDO JÁ CADASTRADO!");
+//        }
 
-        return ResponseEntity.status(HttpStatus.CREATED).body("BRINQUEDO INSERIDO COM SUCESSO.");
+        try{
+            toyRepository.save(toy);
+            return ResponseEntity.status(HttpStatus.OK).body("BRINQUEDO CADASTRADO COM SUCESSO");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("ERRO AO CADASTRAR BRINQUEDO! " + e.getMessage());
+        }
+
+
 
     }
 

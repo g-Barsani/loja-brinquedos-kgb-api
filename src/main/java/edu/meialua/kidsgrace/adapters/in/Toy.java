@@ -20,8 +20,8 @@ public class Toy {
     private String description;
     @Column(name = "brand", length = 100)
     private String brand;
-    @Column(name = "category", length = 250)
-    private Byte[] image;
+    @Column(name = "image", nullable = true)
+    private byte[] image;
     @Column(name = "value", nullable = false)
     private float value;
 
@@ -78,11 +78,11 @@ public class Toy {
         this.brand = brand;
     }
 
-    public Byte[] getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Byte[] image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
