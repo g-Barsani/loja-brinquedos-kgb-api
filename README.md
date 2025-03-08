@@ -1,4 +1,4 @@
-# loja-brinquedos-kgb-api
+# loja-brinquedos-api
 B# Kidsgrace Brasil - Loja de Brinquedos
 
 Kidsgrace Brasil é uma API desenvolvida com **Spring Boot** para gerenciar uma loja de brinquedos. O sistema permite o cadastro, busca, atualização e remoção de brinquedos, marcas e categorias.
